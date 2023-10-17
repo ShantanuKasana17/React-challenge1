@@ -1,17 +1,51 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+/*
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+import "./index.css";
+const img1 = "https://picsum.photos/200/300"; 
+const name = "Shantanu";
+const links = "https://www.cardekho.com/newcars";
+ReactDOM.render(
+<>
+  <h1  className= "heading"> My name is {name}</h1>,
+  <a href={links} target="_new">
+   <img src={img1} alt="randomImages" />
+  </a>  
+
+</>,
+  document.getElementById('root')
+);
+*/
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+
+let curDate = new Date(2020,10,16,15);
+curDate = curDate.getHours();
+
+let greeting = '';
+const cssStyle = { };
+
+if(curDate >= 1 && curDate < 12){
+  greeting = 'Good Morning';
+  cssStyle.color = 'green';
+}else if(curDate>=12 && curDate < 20){
+  greeting = 'Good afternoon';
+  cssStyle.color = 'Orange';
+}else{
+  greeting = 'Good Night';
+  cssStyle.color = 'Black';
+}
+
+ReactDOM.render(
+  <>
+  <div>
+  <h1> Hello Sir,<span style={cssStyle}>{greeting}</span></h1>,
+  </div>
+  </>,
+  document.getElementById(('root'))
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+
+
+
+
